@@ -27,6 +27,9 @@ console.log('eeeeeeeeeeeeeee', process.env.DATABASE_PASSWORD);
         database: configService.get<string>('DATABASE_NAME'),
         entities: [User],
         synchronize: true,
+        ssl: {
+          rejectUnauthorized: false,
+        },
       }),
       inject: [ConfigService],
     }),
